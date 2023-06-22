@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Python Web App</title>
+    <title>Python Curl Executor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,11 +33,18 @@
             font-weight: bold;
         }
 
-        .form-group input {
-            width: 100%;
-            padding: 8px;
+        .curl-box {
             border: 1px solid #cccccc;
             border-radius: 4px;
+            overflow: auto;
+        }
+
+        .curl-box textarea {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            outline: none;
+            resize: none;
         }
 
         #result {
@@ -46,6 +53,10 @@
             border: 1px solid #cccccc;
             border-radius: 4px;
             word-wrap: break-word;
+            overflow: auto;
+            resize: vertical;
+            min-height: 50px;
+            max-height: 300px;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -71,12 +82,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Python Web App</h1>
+        <h1>Python Curl Executor</h1>
         <div class="box">
             <form>
                 <div class="form-group">
                     <label for="curlString">Enter cURL Command:</label>
-                    <input type="text" id="curlString" name="curlString" placeholder="curl command">
+                    <div class="curl-box">
+                        <textarea id="curlString" name="curlString" placeholder="curl command"></textarea>
+                    </div>
                 </div>
                 <div class="form-group">
                     <button type="submit">Execute</button>
