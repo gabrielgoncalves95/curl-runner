@@ -23,4 +23,4 @@ EXPOSE 5000
 RUN pip install gunicorn
 
 # Run the Python app with Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "4", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "4", "--threads", "8" "app:app"]
