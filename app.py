@@ -69,4 +69,4 @@ def execute_curl(curl_command):
         return f'Error executing curl command: {e.output.decode("utf-8")}'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
