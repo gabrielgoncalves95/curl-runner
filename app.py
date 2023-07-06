@@ -45,6 +45,11 @@ app = Flask(__name__)
 def health_check():
     return 'OK'
 
+@app.route('/')
+def home():
+    logger.info("rendering index page")
+    return render_template('index.html')
+
 @app.route('/execute', methods=['POST'])
 def execute_curl():
     logger.info("starting curl execution")
