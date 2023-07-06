@@ -24,4 +24,4 @@ EXPOSE 5000
 
 # Run the Python app with Gunicorn
 # CMD ["python", "--bind", "0.0.0.0:5000", "--workers", "2", "--threads", "4", "app:app"]
-CMD ["python", "app.py"]
+CMD ["python", "app.py", "--host", "0.0.0.0"]
